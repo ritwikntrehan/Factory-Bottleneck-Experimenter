@@ -2,6 +2,8 @@
 
 A browser-based manufacturing engineering tool for answering a counterfactual question: **which investment increases completed, saleable production, and by how much?** It simulates finite buffers, blocking, starvation, parallel machines, processing-time variability, failures, repairs, and demand-aware economics. Machine utilization is a diagnostic—not a benefit estimate.
 
+The public application is available at [fbe.ritwiktrehan.com](https://fbe.ritwiktrehan.com). It opens with a live, synthetic six-station comparison and progressively reveals the full engineering workbench. Model data and simulation stay in the browser.
+
 All bundled examples are explicitly **synthetic**. They are demonstrations, not measurements.
 
 ## What works
@@ -9,6 +11,8 @@ All bundled examples are explicitly **synthetic**. They are demonstrations, not 
 - Editable 3–10 station serial lines, machine counts, fixed/triangular/lognormal cycle times, MTBF/MTTR, source badges, finite buffers, shift, supply, replications, and seed.
 - Pure TypeScript stable-event simulation with exact state-time integrals, active-processing failure clocks, interrupted-part resume, WIP/flow time/buffer metrics, conservation checks, and keyed seeded streams.
 - Browser Web Worker batches with progress and cancellation.
+- Example-first visitor flow with an automatic deterministic run, four quick counterfactual controls, and a separate advanced workbench using the same state and engine.
+- Simulation fingerprints, physical-input invalidation, superseded-run rejection, and export guards prevent old results from being paired with changed assumptions.
 - Four computed interventions: machine addition, cycle-time reduction, buffer expansion, and reliability improvement.
 - Common-random-number paired experiments with a labeled paired t 95% confidence interval for the mean effect.
 - Demand-limited economics, capital annualization, net annual benefit, cost per added saleable unit, and guarded payback.
@@ -57,7 +61,7 @@ tests/               simulation, statistics, economics, scheduler, UI
 examples/            portable JSON datasets
 ```
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for operational semantics and [DEPLOY_CLOUDFLARE.md](DEPLOY_CLOUDFLARE.md) for the owner-run deployment handoff. This repository contains no credentials and has not been deployed.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for operational semantics and [DEPLOY_CLOUDFLARE.md](DEPLOY_CLOUDFLARE.md) for owner-controlled build and deployment settings. This repository contains no credentials; deployment remains an explicit owner action for each release.
 
 ## Scope limits
 

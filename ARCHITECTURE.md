@@ -53,3 +53,9 @@ Economics consumes only physical result summaries. Changing demand, contribution
 ## Hosting and failure behavior
 
 The browser worker performs all heavy computation and emits progress. Cancellation terminates it. The Cloudflare Worker only provides the health endpoint and Workers Static Assets fallback; there are no secrets, bindings, upstream services, or storage. Invalid model/scenario imports are rejected with Zod paths and useful messages. A simulation event ceiling failure becomes a visible UI error rather than a partial result.
+
+## UI result consistency
+
+The UI computes a canonical simulation fingerprint from physical model fields plus scenario IDs/interventions. Demand, margin, operating calendar, capex, useful life and operating expense are deliberately excluded because they derive economics without changing physics. Any fingerprint-changing edit clears physical results, disables result exports, terminates the active browser worker and increments a monotonic run ID. Worker responses are accepted only when both the run ID and captured fingerprint still match, so a late superseded run cannot overwrite current inputs.
+
+Scenario cost fields are synchronized onto current physical result envelopes before economics or exports are derived. Reports include the matching fingerprint and escaped JSON payload. CSV text cells are protected against spreadsheet formula injection.

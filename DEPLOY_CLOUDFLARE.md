@@ -1,6 +1,6 @@
-# Cloudflare deployment handoff (owner-run)
+# Cloudflare release handoff (owner-run)
 
-No deployment was performed. This repository contains no Cloudflare credentials, domains, routes, databases, or shared bindings.
+The project is live at `fbe.ritwiktrehan.com`, but this product pass does not deploy or modify Cloudflare settings. The repository contains no Cloudflare credentials, databases, or shared sibling bindings. The owner remains responsible for initiating and verifying each release.
 
 ## GitHub → Cloudflare Workers Builds
 
