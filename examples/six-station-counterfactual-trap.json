@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "name": "Six-station counterfactual trap",
+  "description": "Synthetic demonstration: a highly utilized upstream station is visually tempting, but downstream reliability and blocking determine saleable output.",
+  "synthetic": true,
+  "shiftMinutes": 480,
+  "supplyCap": 1000,
+  "interarrivalMinutes": 0,
+  "defaultReplications": 100,
+  "baseSeed": 730241,
+  "economics": { "shiftsPerDay": 2, "operatingDaysPerYear": 250, "annualDemandUnits": 120000, "contributionMarginPerUnit": 18, "discountRate": 0.08 },
+  "stations": [
+    { "id": "cut", "name": "Cutting", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 3.5 }, "mtbfMinutes": 5000, "mttrMinutes": 10, "source": "estimated", "outputBufferCapacity": 6 },
+    { "id": "form", "name": "Forming", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 4.15 }, "mtbfMinutes": 5000, "mttrMinutes": 10, "source": "estimated", "outputBufferCapacity": 2 },
+    { "id": "weld", "name": "Welding", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 3.7 }, "mtbfMinutes": 3000, "mttrMinutes": 15, "source": "estimated", "outputBufferCapacity": 1 },
+    { "id": "coat", "name": "Coating", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 3.9 }, "mtbfMinutes": 140, "mttrMinutes": 34, "source": "estimated", "outputBufferCapacity": 1 },
+    { "id": "cure", "name": "Curing", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 3.65 }, "mtbfMinutes": 3000, "mttrMinutes": 15, "source": "estimated", "outputBufferCapacity": 5 },
+    { "id": "pack", "name": "Packing", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 3.7 }, "mtbfMinutes": 4000, "mttrMinutes": 10, "source": "estimated", "outputBufferCapacity": 5 }
+  ]
+}

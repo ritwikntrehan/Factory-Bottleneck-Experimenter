@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0", "name": "Reliability-constrained line", "description": "Synthetic line where the inspection station has frequent, long repairs.", "synthetic": true,
+  "shiftMinutes": 480, "supplyCap": 1000, "interarrivalMinutes": 0, "defaultReplications": 100, "baseSeed": 122419,
+  "economics": { "shiftsPerDay": 2, "operatingDaysPerYear": 250, "annualDemandUnits": 120000, "contributionMarginPerUnit": 18, "discountRate": 0.08 },
+  "stations": [
+    { "id": "mix", "name": "Mix", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 3.2 }, "mtbfMinutes": 2000, "mttrMinutes": 20, "source": "estimated", "outputBufferCapacity": 4 },
+    { "id": "fill", "name": "Fill", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 3.2 }, "mtbfMinutes": 2000, "mttrMinutes": 20, "source": "estimated", "outputBufferCapacity": 3 },
+    { "id": "inspect", "name": "Inspection", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 3.1 }, "mtbfMinutes": 90, "mttrMinutes": 28, "source": "estimated", "outputBufferCapacity": 2 },
+    { "id": "case", "name": "Case pack", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 3.1 }, "mtbfMinutes": 2000, "mttrMinutes": 20, "source": "estimated", "outputBufferCapacity": 4 }
+  ]
+}

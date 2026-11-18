@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0", "name": "Balanced four-station line", "description": "Synthetic near-balanced line with moderate variability.", "synthetic": true,
+  "shiftMinutes": 480, "supplyCap": 1000, "interarrivalMinutes": 0, "defaultReplications": 100, "baseSeed": 918221,
+  "economics": { "shiftsPerDay": 2, "operatingDaysPerYear": 250, "annualDemandUnits": 120000, "contributionMarginPerUnit": 18, "discountRate": 0.08 },
+  "stations": [
+    { "id": "prep", "name": "Preparation", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 4 }, "mtbfMinutes": 1500, "mttrMinutes": 12, "source": "estimated", "outputBufferCapacity": 5 },
+    { "id": "assemble", "name": "Assembly", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 4.1 }, "mtbfMinutes": 1500, "mttrMinutes": 12, "source": "estimated", "outputBufferCapacity": 5 },
+    { "id": "test", "name": "Test", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 4 }, "mtbfMinutes": 1500, "mttrMinutes": 12, "source": "estimated", "outputBufferCapacity": 5 },
+    { "id": "pack", "name": "Pack", "machines": 1, "cycleTime": { "kind": "fixed", "minutes": 3.9 }, "mtbfMinutes": 1500, "mttrMinutes": 12, "source": "estimated", "outputBufferCapacity": 5 }
+  ]
+}
